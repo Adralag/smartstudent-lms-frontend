@@ -196,12 +196,6 @@ const handleLogin = async (e) => {
           </svg>
           <span style={{ marginLeft: '10px' }}>Continue with Google</span>
         </button>
-
-        {/* Sign-up Link */}
-        <p className="link-text">
-          Don't have an account? <a href="/register">Sign Up Here</a> (FR001)
-        </p>
-
       </div>
     </div>
   );

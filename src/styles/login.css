@@ -1,0 +1,167 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f8f8f8; /* Off-White background */
+    font-family: 'Inter', sans-serif; /* Using a modern font */
+}
+
+.login-box {
+    background: #ffffff;
+    padding: 60px 40px; /* Increased padding for better spacing */
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 31, 63, 0.1); /* Shadow based on Navy */
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+}
+
+/* Header and Logo - Simulating the branding section */
+.brand-logo {
+    font-size: 28px;
+    font-weight: 900;
+    color: #001f3f; /* Primary Navy */
+    margin-bottom: 30px;
+}
+
+/* Main Title */
+.login-box h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #001f3f; 
+    margin-bottom: 40px;
+}
+
+/* Form Inputs and Labels */
+.form-group {
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #999;
+}
+
+/* Password Requirements (Checklist) */
+.password-requirements {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #999;
+}
+
+.password-requirements span {
+    display: flex;
+    align-items: center;
+}
+
+.password-requirements .valid {
+    color: #FFD700; /* Accent Gold for 'passed' state */
+}
+
+/* Primary Button */
+.primary-button {
+    width: 100%;
+    padding: 14px;
+    background-color: #001f3f; /* Primary Navy */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 25px;
+}
+
+.primary-button:hover {
+    background-color: #003366; 
+}
+
+/* Separator OR */
+.separator {
+    text-align: center;
+    margin: 25px 0;
+    color: #aaa;
+    position: relative;
+    font-size: 14px;
+}
+
+.separator::before,
+.separator::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background: #eee;
+}
+
+.separator::before { left: 0; }
+.separator::after { right: 0; }
+
+/* Secondary Buttons */
+.secondary-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    background-color: white;
+    color: #001f3f;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.secondary-button:hover {
+    background-color: #f0f0f0;
+}
+
+.secondary-button img {
+    margin-right: 10px;
+    height: 20px;
+}
+
+/* Links */
+.link-text a {
+    color: #001f3f; /* Navy for links */
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.link-text a:hover {
+    color: #FFD700; /* Gold on hover */
+}

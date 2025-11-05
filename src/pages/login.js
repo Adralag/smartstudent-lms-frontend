@@ -1,15 +1,62 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import authService from '../services/authservice';
 import '../styles/login.css';
 
 const LoginPage = () => {
+  const navigate = useNavigate();
+  const [isRegistering, setIsRegistering] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [name, setName] = useState('');
+  const [role, setRole] = useState('student');
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleLogin = (e) => {
+const handleLogin = async (e) => {
+  e.preventDefault();
+  try {
+    const user = await authService.login(email, password);
+    
+    // Success: Redirect based on role
+    if (user.role === 'Student') {
+      navigate('/dashboard/student');
+    } else if (user.role === 'Lecturer') {
+      navigate('/dashboard/lecturer');
+    } else if (user.role === 'Administrator') {
+      navigate('/dashboard/admin');
+    }
+
+  } catch (error) {
+    alert('Login failed: Invalid credentials or server error.');
+  }
+};
+
+  const handleRegister = async (e) => {
     e.preventDefault();
-    console.log('SmartStudent Login Attempt:', email);
-    // Secure Authentication Logic (FR002) goes here
+    setError('');
+
+    if (!name || !email || !password || !role) {
+      setError('All fields are required');
+      return;
+    }
+
+    try {
+      await authService.register({
+        name,
+        email,
+        password,
+        role
+      });
+      // After successful registration, switch to login mode
+      setIsRegistering(false);
+      // Clear form
+      setName('');
+      setPassword('');
+      setEmail('');
+    } catch (err) {
+      setError(err.response?.data?.message || 'Registration failed. Please try again.');
+    }
   };
 
   // Simplified logic for UI feedback
@@ -28,7 +75,29 @@ const LoginPage = () => {
         {/* Main Title */}
         <h1>Log in to SmartStudent</h1>
 
-        <form onSubmit={handleLogin}>
+        <form onSubmit={isRegistering ? handleRegister : handleLogin}>
+          {/* Show error message if any */}
+          {error && (
+            <div className="error-message">
+              {error}
+            </div>
+          )}
+
+          {/* Name Field - Only shown during registration */}
+          {isRegistering && (
+            <div className="form-group">
+              <label htmlFor="name">Full Name</label>
+              <input
+                type="text"
+                id="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Enter your full name"
+                required
+              />
+            </div>
+          )}
+
           {/* Email Field */}
           <div className="form-group">
             <label htmlFor="email">Email</label>
@@ -54,17 +123,15 @@ const LoginPage = () => {
                 placeholder="••••••••"
                 required
               />
-              {/* Password Visibility Toggle */}
               <span 
                 className="password-toggle" 
                 onClick={() => setShowPassword(!showPassword)}
               >
-                {/* Replace with an actual icon component (e.g., a simple eye icon) */}
-                {showPassword ? '[Eye Icon Open]' : '[Eye Icon Closed]'}
+                {showPassword ? '👁️' : '👁️‍🗨️'}
               </span>
             </div>
             
-            {/* Password Requirements Checklist - Matching the screenshot style */}
+            {/* Password Requirements Checklist */}
             <div className="password-requirements">
               <span className={passwordChecklist.number ? 'valid' : ''}>
                 {passwordChecklist.number ? '✔' : '•'} Number
@@ -78,11 +145,44 @@ const LoginPage = () => {
             </div>
           </div>
 
-          {/* Primary Button */}
+          {/* Role Selection - Only shown during registration */}
+          {isRegistering && (
+            <div className="form-group">
+              <label htmlFor="role">Role</label>
+              <select
+                id="role"
+                value={role}
+                onChange={(e) => setRole(e.target.value)}
+                required
+              >
+                <option value="student">Student</option>
+                <option value="lecturer">Lecturer</option>
+              </select>
+            </div>
+          )}
+
+          {/* Submit Button */}
           <button type="submit" className="primary-button">
-            Secure Login
+            {isRegistering ? 'Create Account' : 'Secure Login'}
           </button>
         </form>
+
+        {/* Toggle between login and register */}
+        <p className="toggle-form">
+          {isRegistering ? 'Already have an account?' : "Don't have an account?"}{' '}
+          <button 
+            className="link-button"
+            onClick={() => {
+              setIsRegistering(!isRegistering);
+              setError('');
+              setEmail('');
+              setPassword('');
+              setName('');
+            }}
+          >
+            {isRegistering ? 'Login here' : 'Register here'}
+          </button>
+        </p>
 
         {/* Separator */}
         <div className="separator">OR</div>

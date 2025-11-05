@@ -1,0 +1,118 @@
+.review-module {
+    margin-top: 20px;
+}
+
+.assessment-summary {
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #001F3F;
+    border-bottom: 2px solid #FFD700;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.question-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.question-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.question-header h4 {
+    margin: 0;
+    color: #001F3F;
+}
+
+.metadata label {
+    font-size: 0.9em;
+    margin-right: 5px;
+    color: #666;
+}
+
+.metadata input[type="number"] {
+    width: 50px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.question-text-editor {
+    width: 100%;
+    min-height: 80px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* MCQ Options Styling */
+.option-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.option-row input[type="text"] {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+
+.correct-label {
+    color: #008000;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.add-option-btn {
+    background: none;
+    border: 1px solid #FFD700;
+    color: #001F3F;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Theory Rubric Styling */
+.theory-rubric label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.theory-rubric textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.finalize-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #001F3F; /* Navy Primary */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.finalize-button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}

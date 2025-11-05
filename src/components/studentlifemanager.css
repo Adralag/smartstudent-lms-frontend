@@ -1,0 +1,130 @@
+.life-manager-module {
+    margin-top: 20px;
+}
+
+.life-manager-module h2 {
+    color: #001F3F;
+    border-bottom: 2px solid #FFD700; 
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+.manager-content-flex {
+    display: flex;
+    gap: 20px;
+}
+
+.reminders-section, .calendar-preview {
+    flex: 1;
+}
+
+/* Goal Setting */
+.goal-setting {
+    background-color: #001F3F; /* Navy Blue background */
+    color: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border-left: 5px solid #FFD700;
+}
+
+.current-goal {
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.goal-edit-button {
+    background-color: #FFD700;
+    color: #001F3F;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Reminders Form */
+.reminder-form {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.reminder-form input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+}
+
+.add-reminder-button {
+    background-color: #003366;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+/* Reminder List */
+.reminder-list {
+    list-style: none;
+    padding: 0;
+}
+
+.event-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    border-bottom: 1px dashed #eee;
+    font-size: 0.95em;
+    border-left: 4px solid transparent;
+}
+
+.event-item.priority-high { border-left-color: #FFD700; } 
+.event-item.priority-critical { border-left-color: #A00000; font-weight: bold; } 
+
+.event-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.event-date {
+    font-size: 0.8em;
+    color: #666;
+}
+
+.event-name {
+    color: #001F3F;
+}
+
+.event-tag {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.75em;
+}
+
+.tag-academic { background-color: #e0f7fa; color: #004d40; } 
+.tag-personal { background-color: #fff8e1; color: #ff6f00; } 
+
+/* Calendar Preview */
+.calendar-visual-placeholder {
+    height: 150px;
+    background-color: #f0f4f7;
+    border: 1px dashed #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #666;
+    margin: 15px 0;
+}
+
+.view-full-calendar-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #001F3F;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}

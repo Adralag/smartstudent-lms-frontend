@@ -1,0 +1,108 @@
+.collaboration-hub {
+    margin-top: 30px;
+}
+
+.collaboration-hub h2 {
+    color: #001F3F;
+    border-bottom: 2px solid #FFD700; 
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.tab-navigation {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.tab-navigation button {
+    background: none;
+    border: none;
+    padding: 10px 15px;
+    margin-right: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #555;
+    border-bottom: 3px solid transparent;
+    transition: color 0.2s;
+}
+
+.tab-navigation button.active {
+    color: #001F3F; /* Navy Blue */
+    font-weight: 600;
+    border-bottom-color: #001F3F;
+}
+
+/* Group Cards */
+.group-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.group-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-left: 5px solid #FFD700; /* Gold accent */
+}
+
+.group-info h4 {
+    margin: 0 0 5px 0;
+    color: #001F3F;
+}
+
+.group-info p {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.group-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.collab-button {
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.collab-button.primary {
+    background-color: #001F3F;
+    color: white;
+    border: none;
+}
+
+.collab-button.secondary {
+    background-color: white;
+    color: #001F3F;
+    border: 1px solid #001F3F;
+}
+
+.create-group-button {
+    align-self: flex-start;
+    padding: 10px 20px;
+    background-color: #FFD700;
+    color: #001F3F;
+    border: none;
+    border-radius: 4px;
+    margin-top: 20px;
+    font-weight: 700;
+}
+
+/* Resource Sharing Section */
+.shared-files {
+    list-style-type: none;
+    padding: 10px 0;
+}
+
+.shared-files li {
+    background-color: #f8f8f8;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    color: #003366;
+}

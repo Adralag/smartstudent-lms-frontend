@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import CourseMaterialManager from '../components/coursematerialmanager.js';
+import CourseMaterialManager from '../components/coursematerialmanager.jsx';
 import AIAssessmentGenerator from '../components/AIassessmentgenerator.js';
 import '../styles/dashboard.css';
-import DashboardLayout from '../components/dashboardlayout.js';
+import DashboardLayout from '../components/dashboardlayout.jsx';
 
 const LecturerDashboard = () => {
   const lecturerName = "Jackson Ihechukwu"; // Example name from the project

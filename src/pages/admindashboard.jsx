@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import UserManagement from '../components/UserManagement'; // To be created next
+import UserManagement from '../components/usermanagement'; // To be created next
 import '../styles/dashboard.css'; 
 
 const AdminDashboard = () => {

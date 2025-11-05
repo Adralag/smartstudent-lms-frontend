@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import '../styles/dashboard.css';
-import AIStudyRecommender from '../components/AIstudyrecommender.js';
-import CollaborationHub from '../components/collaborationhub.js';
-import DashboardLayout from '../components/dashboardlayout.js';
+import AIStudyRecommender from '../components/AIstudyrecommender.jsx';
+import CollaborationHub from '../components/collaborationhub.jsx';
+import DashboardLayout from '../components/dashboardlayout.jsx';
 
 const StudentDashboard = () => {
   // Mock User Data

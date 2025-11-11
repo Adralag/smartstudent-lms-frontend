@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import CourseMaterialManager from '../components/coursematerialmanager.jsx';
-import AIAssessmentGenerator from '../components/AIassessmentgenerator.js';
+import AIAssessmentGenerator from '../components/AIassessmentgenerator.jsx';
 import '../styles/dashboard.css';
 import DashboardLayout from '../components/dashboardlayout.jsx';
 

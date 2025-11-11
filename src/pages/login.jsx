@@ -16,6 +16,7 @@ import {
   getDoc, 
   onSnapshot
 } from 'firebase/firestore';
+import './styles/login.css'
 
 const appId = (typeof window !== 'undefined' && typeof window.__app_id !== 'undefined') ? window.__app_id : (typeof global !== 'undefined' && typeof global.__app_id !== 'undefined') ? global.__app_id : 'default-app-id';
 // TODO: Replace the following object with your actual Firebase config from the Firebase Console
